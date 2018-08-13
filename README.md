@@ -14,7 +14,7 @@ Spoza klasy do jej statycznych składowych możemy odwoływać się na dwa sposo
 mylące i nie polecane).
 
 ## Zadanie 1
-Utwórz klasę `Figures`. Umieść w niej poniższy kod i przetestuj działania. Zauważ, że metody statyczne `FieldOfCircle`a i `PerimeterOfCircle` korzystają z innych metod statycznych zawartych w bibliotece `Math`, która również jest klasą. Dodaj wewnątrz klasy kolejne metody statyczne umożliwiające obliczanie następujących figur: `Square`, `Rectangle`, `Cone`, `Cylinder`. 
+Utwórz klasę `Figures`. Umieść w niej poniższy kod i przetestuj działania. Zauważ, że metody statyczne `FieldOfCircle`a i `PerimeterOfCircle` korzystają z innych metod statycznych zawartych w bibliotece `Math`, która również jest klasą. Dodaj wewnątrz klasy kolejne metody statyczne umożliwiające obliczanie (pole i obwód dla figór płaskich, objętość i pole powierzchni całkowitej dla figór przestrzennych) następujących figur: `Square`, `Rectangle`, `Cone`, `Cylinder`. 
 
 ```java
 package pl.edu.ur.oopl6.zad1;
