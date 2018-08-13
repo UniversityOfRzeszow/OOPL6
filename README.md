@@ -128,8 +128,9 @@ public class ObjectCounter {
 Utwórz klasę `Complex` implementującą strukturę liczb zespolonych.
 
 * klasa ma zawierać pola `re` - real oraz `im` - imaginary
+* klasa ma zawierać konstruktor inicjalizujący powyższe pola
 
-Do klasy dodaj metody statyczne dokonujące obliczeń na tych liczbach tj:
+Do klasy dodaj metody dokonujące obliczeń na tych liczbach tj:
 * `abs()` - obliczanie modułu liczby zespolonej
 * `plus(Complex b)` - dodawanie (innej liczby zespolonej)
 * `minus(Complex b)` - odejmowanie (innej liczby zespolonej)
@@ -142,5 +143,25 @@ Do klasy dodaj metody statyczne dokonujące obliczeń na tych liczbach tj:
 * `sin()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - sinus
 * `cos()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - cosinus
 * `tan()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - tangens
+
+Dodaj do klasy statyczne odpowiedniki tych metod:
+
+Przykład:
+
+```java
+    public Complex plus(Complex b) {
+        Complex a = this;
+        double real = a.re + b.re;
+        double imag = a.im + b.im;
+        return new Complex(real, imag);
+    }
+
+    public static Complex plus(Complex a, Complex b) {
+        double real = a.re + b.re;
+        double imag = a.im + b.im;
+        Complex sum = new Complex(real, imag);
+        return sum;
+    }
+```
 
 ##### W oparciu o opracowanie dr inż. Wojciecha Kozła
