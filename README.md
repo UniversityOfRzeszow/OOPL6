@@ -129,7 +129,7 @@ Utwórz klasę `Complex` implementującą strukturę liczb zespolonych.
 
 * klasa ma zawierać pola `re` - real oraz `im` - imaginary
 * klasa ma zawierać konstruktor inicjalizujący powyższe pola
-* klasa ma zawierać metody zapewniające dostęp (`get` i `set`) do pól `re` i `im`
+* klasa ma zawierać metody zapewniające dostęp (`get`) do pól `re` i `im`
 
 Do klasy dodaj metody dokonujące obliczeń na tych liczbach tj:
 * `abs()` - obliczanie modułu liczby zespolonej
