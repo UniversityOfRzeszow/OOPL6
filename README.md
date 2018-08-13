@@ -14,12 +14,12 @@ Spoza klasy do jej statycznych składowych możemy odwoływać się na dwa sposo
 mylące i nie polecane).
 
 ## Zadanie 1
-Utwórz klasę Figury. Umieść w niej poniższy kod i przetestuj działania. Zauważ, że metody statyczne `PoleKol`a i `ObwodKola` korzystają z innych metod statycznych zawartych w bibliotece `Math`, która również jest klasą. Dodaj wewnątrz klasy kolejne metody statyczne umożliwiające obliczanie następujących figur: `kwadrat`, `prostokąt`, `stożek`, `walec`. 
+Utwórz klasę `Figures`. Umieść w niej poniższy kod i przetestuj działania. Zauważ, że metody statyczne `FieldOfCircle`a i `PerimeterOfCircle` korzystają z innych metod statycznych zawartych w bibliotece `Math`, która również jest klasą. Dodaj wewnątrz klasy kolejne metody statyczne umożliwiające obliczanie następujących figur: `Square`, `Rectangle`, `Cone`, `Cylinder`. 
 
 ```java
 package pl.edu.ur.oopl6.zad1;
 
-public class Figury {
+public class Figures {
     
     /**
      * Inicjalizator statyczny
@@ -31,14 +31,14 @@ public class Figury {
     /**
      * Metoda statyczna obliczająca pole koła
      */
-    public static double PoleKola(double r){
+    public static double FieldOfCircle(double r){
         return Math.PI*Math.pow(r,2);
     }
     
     /**
      * Metoda statyczna obliczająca obwód koła
      */
-    public static double ObwodKola(double r){
+    public static double PerimeterOfCircle(double r){
         return 2*Math.PI*r;
     }
     
@@ -48,13 +48,13 @@ public class Figury {
 ```java
 package pl.edu.ur.oopl6.zad1;
 
-public class SkladoweStatyczne {
+public class StaticComponents {
 
     public static void main(String[] args) {
         // TODO zad 3
         
-        System.out.println(Figury.PoleKola(0.5));
-        System.out.println(Figury.ObwodKola(0.5));
+        System.out.println(Figures.FieldOfCircle(0.5));
+        System.out.println(Figures.PerimeterOfCircle(0.5));
     }
     
 }
@@ -66,7 +66,7 @@ Przetestuj i opisz działanie poniższego kodu źródłowego.
 ```java
 package pl.edu.ur.oopl6.zad2;
 
-public class Punkt {
+public class Point {
 
     private int x;
     private int y;
@@ -77,7 +77,7 @@ public class Punkt {
     private static int counter;
     public static Punkt last_point;
 
-    public Punkt(int x, int y, int z) {
+    public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -85,7 +85,7 @@ public class Punkt {
         last_point = this;
     }
 
-    public static void PokazOstatniObiekt() {
+    public static void ShowLastPoint() {
         System.out.println("Klasa Punkt o współrzędnych (x = " + last_point.x
                 + " y = " + last_point.y + ""
                 + " z = " + last_point.z + "). Istnieje już"
@@ -109,38 +109,38 @@ package pl.edu.ur.oopl6.zad2;
 
 public class ObjectCounter {
     public static void main(String[] args){
-        Punkt[] p = new Punkt[10];
+        Point[] p = new Point[10];
         Random r = new Random();
         for (int i = 0; i<10; i++){
-            p[i] = new Punkt(r.nextInt(1000), r.nextInt(1000), r.nextInt(1000));
+            p[i] = new Point(r.nextInt(1000), r.nextInt(1000), r.nextInt(1000));
             System.out.println(p[i].toString());
         }
         System.out.println();
         System.out.println("-------------------------------------------------");
-        System.out.println(Punkt.last_point.toString());
+        System.out.println(Point.last_point.toString());
         System.out.println("-------------------------------------------------");
-        Punkt.PokazOstatniObiekt();
+        Point.ShowLastPoint();
     }
 }
 ```
 
 ## Zadanie 3
-Utwórz klasę `Complex` implementującą strukturę liczb zespolonych. 
+Utwórz klasę `Complex` implementującą strukturę liczb zespolonych.
+
+* klasa ma zawierać pola `re` - real oraz `im` - imaginary
+
 Do klasy dodaj metody statyczne dokonujące obliczeń na tych liczbach tj:
-* obliczanie modułu liczby zespolonej
-* obliczenie wartości liczby sprzężonej do liczby zespolonej
-* zamiana postaci algebraicznej liczby zespolonej na wykładniczą
-* zamiana postaci wykładniczej liczby zespolonej na algebraiczną
-* dodawanie (z argumentami w postaci algebraicznej)
-* dodawanie (z argumentami w postaci wykładnicze)
-* odejmowanie (z argumentami w postaci algebraicznej)
-* mnożenie (z argumentami w postaci algebraicznej)
-* dzielenie (z argumentami w postaci algebraicznej)
-* dzielenie (z argumentami w postaci wykładniczej)
+* `abs()` - obliczanie modułu liczby zespolonej
+* `plus(Complex b)` - dodawanie (innej liczby zespolonej)
+* `minus(Complex b)` - odejmowanie (innej liczby zespolonej)
+* `times(Complex b)` - mnożenie (przez inną liczbę zespoloną)
+* `scale(double alpha)` - mnożenie (przez skalar (typu `double`))
+* `conjugate()` - sprzężenie
+* `reciprocal()` - odwrotność
+* `divides(Complex b)` - dzielenie (przez inną liczbę zespoloną)
+* `exp()` - metoda zwracająca wartość liczby zespolonej w funkcji expotencjalnej
+* `sin()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - sinus
+* `cos()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - cosinus
+* `tan()` - metoda zwracająca wartość liczby zespolonej w postaci zapisu trygonometrycznego - tangens
 
-Oraz metody zwracającą wartość liczby zespolonej w typie łańcuchowym (`String`) w postaci zapisu:
-* algebraicznego
-* wykładniczego
-* trygonometrycznego
-
-##### Opracował dr inż. Wojciech Kozioł
+##### W oparciu o opracowanie dr inż. Wojciecha Kozła
